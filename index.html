@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu blog pokemon</title>
+    
     <style>
-        img {
-            width: 80px;
-            height: 80px;
-        }
-        
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
@@ -17,10 +15,11 @@
         header {
             background-color: #1b0fc2; 
             color: white;
-            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
             padding: 30px 10px;
             border: 4px solid #fffb00;
-            margin-bottom: 30px;
+            text-align: center;
         }
 
         header h1 {
@@ -34,51 +33,110 @@
             font-weight: lighter;
         }
 
-        article h2 {
-            font-size: 22px;
-            margin-bottom: 5px;
+        main {
+            background-color: #FFFFFF;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px; 
         }
 
-        .author {
+        article {
+            display: flex;
+            gap: 15px; 
+            align-items: flex-start;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        article h2 {
+            font-size: 22px;
+            margin: 0 0 5px 0;
+        }
+
+        .artigo-autor {
             font-size: 14px;
             color: #555;
-            margin-bottom: 15px;
+            font-weight: bold;
+            margin: 0 0 15px 0;
         }
 
         .content {
             font-size: 16px;
             line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        button {
+            cursor: pointer;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Meu blog pokemon</h1>
-        <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
-    </header>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvI9U-ImGqO7fh6lVypwxZCbx0xSa-qLV_LA&s" alt="pokemon logo">
+  <header>
+    <h1>Meu blog pokemon ⚡</h1>
+    <p>Vou compartilhar conhecimentos sobre pokemons</p>
+  </header>
+
+  <main>
     <article>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvI9U-ImGqO7fh6lVypwxZCbx0xSa-qLV_LA&s" alt="logo do pokemon amarelo e azul">
+      <div>
         <h2>Meu primeiro post</h2>
-        <div class="author">Por: Vitor Daniel</div>
+        <p class="artigo-autor">Por: Vitor Daniel</p>
         <div class="content">
             Boas-vindas ao meu novo blog! Aqui vou compartilhar curiosidades sobre pokemons.
         </div>
-        <button>💜​<span>0function botaoClicado() {
-            let texto = botao.querySelector("span");
-            texto.textContent++;
-        }</span></button>
-
-        <script>
-        const botao = document.querySelector("button");
-        botao.addEventListener("click", botaoClicado);
-
-        function botaoClicado() {
-            console.log("fui clicado");
-        }
-            
-    </script>
+        <button>💜 <span>0</span></button>
+      </div>
     </article>
+
+    <article>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvI9U-ImGqO7fh6lVypwxZCbx0xSa-qLV_LA&s" alt="pokemon logo">
+      <div>
+        <h2>Curiosidades sobre o Pikachu</h2>
+        <p class="artigo-autor">Por: Vitor Daniel</p>
+        <div class="content">
+            Você sabia que o nome do Pikachu vem de "pika" (faísca elétrica) e "chu" (som de rato)?
+        </div>
+        <button>💜 <span>0</span></button>
+      </div>
+    </article>
+  </main>
+
+  <script>
+
+    const botoes = document.querySelectorAll("button");
+    
+    botoes.forEach(function (botao) {
+        let curtiu = false;
+        botao.addEventListener("click", botaoClicado);
+        
+        function botaoClicado(){
+            console.log("Fui clicado");
+            let texto = botao.querySelector("span");
+            
+            if (curtiu === false){
+                texto.textContent++;
+                curtiu = true;
+            } else {
+                texto.textContent--;
+                curtiu = false;
+            } 
+        }
+    });
+  </script>
 
 </body>
 </html>
