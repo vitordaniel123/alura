@@ -64,6 +64,20 @@
         <div class="content">
             Boas-vindas ao meu novo blog! Aqui vou compartilhar curiosidades sobre pokemons.
         </div>
+        <button>💜​<span>0function botaoClicado() {
+            let texto = botao.querySelector("span");
+            texto.textContent++;
+        }</span></button>
+
+        <script>
+        const botao = document.querySelector("button");
+        botao.addEventListener("click", botaoClicado);
+
+        function botaoClicado() {
+            console.log("fui clicado");
+        }
+            
+    </script>
     </article>
 
 </body>
