@@ -1,142 +1,274 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu blog pokemon</title>
-    
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
         }
-
+     
         header {
             background-color: #1b0fc2; 
-            color: white;
+            color: #ffffff;
+            width: 100%;
             max-width: 800px;
-            margin: 0 auto 30px auto;
-            padding: 30px 10px;
-            border: 4px solid #fffb00;
+            padding: 40px 20px;
+            box-sizing: border-box;
             text-align: center;
+            border: 4px solid #fffb00;
         }
 
         header h1 {
-            margin: 0 0 10px 0;
-            font-size: 28px;
+            margin: 0;
+            font-size: 48px;
+            font-weight: bold;
         }
 
         header p {
-            margin: 0;
-            font-size: 14px;
+            margin-top: 20px;
+            font-size: 18px;
+            margin-bottom: 20px;
             font-weight: lighter;
         }
 
+        .banner-img {
+            width: 100%;
+            max-width: 700px;
+            height: 250px;
+            object-fit: contain;
+            background-color: #ffffff;
+            border-radius: 4px;
+        }
+
         main {
-            background-color: #FFFFFF;
+            background-color: #ffffff;
+            width: 100%;
             max-width: 800px;
-            margin: 0 auto;
-            padding: 15px;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+
+        .post {
+            background-color: rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
             display: flex;
             flex-direction: column;
-            gap: 20px; 
         }
 
-        article {
+        .post-header-container {
             display: flex;
-            gap: 15px; 
-            align-items: flex-start;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 20px;
         }
 
-        img {
+        .post-img {
             width: 80px;
             height: 80px;
             object-fit: contain;
+            border-radius: 4px;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #ddd;
         }
 
-        article h2 {
-            font-size: 22px;
-            margin: 0 0 5px 0;
+        .post-title-area {
+            display: flex;
+            flex-direction: column;
         }
 
-        .artigo-autor {
-            font-size: 14px;
+        h2 {
+            color: #1b0fc2;
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .author {
             color: #555;
+            font-size: 18px;
             font-weight: bold;
-            margin: 0 0 15px 0;
+            margin: 5px 0 0 0;
         }
 
         .content {
-            font-size: 16px;
+            color: #333333;
+            font-size: 20px;
             line-height: 1.5;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
-        button {
-            cursor: pointer;
-            padding: 5px 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+        .interactions {
+            display: flex;
+            gap: 15px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding-top: 15px;
+        }
+
+        .btn-interact {
             background-color: #f9f9f9;
+            color: #333;
+            border: 1px solid #ccc;
+            padding: 10px 15px;
+            font-size: 16px;
+            font-family: inherit;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .btn-interact:hover {
+            background-color: #eeeeee;
+        }
+
+        .btn-interact.active-like {
+            background-color: #673ab7;
+            color: #ffffff;
+            border-color: #673ab7;
+        }
+
+        .btn-interact.active-fav {
+            background-color: #333333;
+            color: #ffffff;
+            border-color: #333333;
         }
     </style>
 </head>
 <body>
 
-  <header>
-    <h1>Meu blog pokemon ⚡</h1>
-    <p>Vou compartilhar conhecimentos sobre pokemons</p>
-  </header>
+    <header>
+        <h1>Meu blog pokemon ⚡</h1>
+        <p>Vou compartilhar conhecimentos sobre pokemons</p>
+        <img class="banner-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvI9U-ImGqO7fh6lVypwxZCbx0xSa-qLV_LA&s" alt="Apresentação Pokémon">
+    </header>
 
-  <main>
-    <article>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvI9U-ImGqO7fh6lVypwxZCbx0xSa-qLV_LA&s" alt="logo do pokemon amarelo e azul">
-      <div>
-        <h2>Meu primeiro post</h2>
-        <p class="artigo-autor">Por: Vitor Daniel</p>
-        <div class="content">
-            Boas-vindas ao meu novo blog! Aqui vou compartilhar curiosidades sobre pokemons.
-        </div>
-        <button>💜 <span>0</span></button>
-      </div>
-    </article>
-
-    <article>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvI9U-ImGqO7fh6lVypwxZCbx0xSa-qLV_LA&s" alt="pokemon logo">
-      <div>
-        <h2>Curiosidades sobre o Pikachu</h2>
-        <p class="artigo-autor">Por: Vitor Daniel</p>
-        <div class="content">
-            Você sabia que o nome do Pikachu vem de "pika" (faísca elétrica) e "chu" (som de rato)?
-        </div>
-        <button>💜 <span>0</span></button>
-      </div>
-    </article>
-  </main>
-
-  <script>
-
-    const botoes = document.querySelectorAll("button");
-    
-    botoes.forEach(function (botao) {
-        let curtiu = false;
-        botao.addEventListener("click", botaoClicado);
-        
-        function botaoClicado(){
-            console.log("Fui clicado");
-            let texto = botao.querySelector("span");
+    <main>
+        <div class="post">
+            <div class="post-header-container">
+                <img class="post-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_9K6Zh15qWANOUBRAmxz2FTR-qvZhqUU1PiVLZK4fYg&s=10" alt="diversos pokemons">
+                <div class="post-title-area">
+                    <h2>Meu primeiro post</h2>
+                    <p class="author">Por: Vitor Daniel</p>
+                </div>
+            </div>
             
-            if (curtiu === false){
-                texto.textContent++;
-                curtiu = true;
+            <div class="content">
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar curiosidades sobre pokemons.</p>
+            </div>
+            
+            <div class="interactions">
+                <button class="btn-interact" id="likeBtn1" onclick="toggleLike1()">
+                    💜 Gostei (<span id="likeCount1">0</span>)
+                </button>
+                <button class="btn-interact" id="favBtn1" onclick="toggleFav1()">
+                    👎 Não gostei (<span id="favCount1">0</span>)
+                </button>
+            </div>
+        </div>
+
+        <div class="post">
+            <div class="post-header-container">
+                <img class="post-img" src="https://i.pinimg.com/736x/87/67/4b/87674b1aed73fc448bd021dbd96fb2a9.jpg" alt="pikachu">
+                <div class="post-title-area">
+                    <h2>Curiosidades sobre o Pikachu</h2>
+                    <p class="author">Por: Vitor Daniel</p>
+                </div>
+            </div>
+            
+            <div class="content">
+                <p>Você sabia que o nome do Pikachu vem de "pika" (faísca elétrica) e "chu" (som de rato)?</p>
+            </div>
+
+            <div class="interactions">
+                <button class="btn-interact" id="likeBtn2" onclick="toggleLike2()">
+                    💜 Gostei (<span id="likeCount2">0</span>)
+                </button>
+                <button class="btn-interact" id="favBtn2" onclick="toggleFav2()">
+                    👎 Não gostei (<span id="favCount2">0</span>)
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+
+        let liked1 = false;
+        let faved1 = false;
+
+        let liked2 = false;
+        let faved2 = false;
+
+        function toggleLike1() {
+            const likeBtn = document.getElementById('likeBtn1');
+            const likeCount = document.getElementById('likeCount1');
+            
+            if (!liked1) {
+                likeCount.textContent = '1';
+                likeBtn.classList.add('active-like');
+                liked1 = true;
             } else {
-                texto.textContent--;
-                curtiu = false;
-            } 
+                likeCount.textContent = '0';
+                likeBtn.classList.remove('active-like');
+                liked1 = false;
+            }
         }
-    });
-  </script>
+
+        function toggleFav1() {
+            const favBtn = document.getElementById('favBtn1');
+            const favCount = document.getElementById('favCount1');
+            
+            if (!faved1) {
+                favCount.textContent = '1';
+                favBtn.classList.add('active-fav');
+                faved1 = true;
+            } else {
+                favCount.textContent = '0';
+                favBtn.classList.remove('active-fav');
+                faved1 = false;
+            }
+        }
+
+        function toggleLike2() {
+            const likeBtn = document.getElementById('likeBtn2');
+            const likeCount = document.getElementById('likeCount2');
+            
+            if (!liked2) {
+                likeCount.textContent = '1';
+                likeBtn.classList.add('active-like');
+                liked2 = true;
+            } else {
+                likeCount.textContent = '0';
+                likeBtn.classList.remove('active-like');
+                liked2 = false;
+            }
+        }
+
+        function toggleFav2() {
+            const favBtn = document.getElementById('favBtn2');
+            const favCount = document.getElementById('favCount2');
+            
+            if (!faved2) {
+                favCount.textContent = '1';
+                favBtn.classList.add('active-fav');
+                faved2 = true;
+            } else {
+                favCount.textContent = '0';
+                favBtn.classList.remove('active-fav');
+                faved2 = false;
+            }
+        }
+    </script>
 
 </body>
 </html>
