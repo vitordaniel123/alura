@@ -9,31 +9,82 @@
 
     <style>
 
-        /* =========================
-           CONFIGURAÇÕES GERAIS
-           ========================= */
+        /* =====================================
+           VARIÁVEIS GLOBAIS
+           ===================================== */
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            max-width: 100vw;
-            box-sizing: border-box;
-            background-color: #f4f4f4;
+        :root {
+            --cor-primaria: #183C63;
+            --cor-secundaria: #3782d2;
+            --cor-fundo: #ffffff;
+            --cor-texto: #151428;
+            --cor-contraste: #f3eef7;
+            --cor-botao: #f9f9f9;
+
+            --cor-borda: #183C63;
+            --cor-borda-clara: #dddddd;
+
+            --fonte-texto: 'Segoe UI', sans-serif;
         }
 
 
-        /* =========================
+        /* =====================================
+           MODO ESCURO
+           ===================================== */
+
+        .tema-escuro {
+            --cor-primaria: #c9e3ff;
+            --cor-secundaria: #66b3ff;
+            --cor-fundo: #151428;
+            --cor-texto: #ffffff;
+            --cor-contraste: #f3eef7;
+            --cor-botao: #29283d;
+
+            --cor-borda: #c9e3ff;
+            --cor-borda-clara: #44435a;
+        }
+
+
+        /* =====================================
+           CONFIGURAÇÕES GERAIS
+           ===================================== */
+
+        body {
+            max-width: 100vw;
+
+            font-family: var(--fonte-texto);
+
+            margin: 0;
+            padding: 20px;
+
+            box-sizing: border-box;
+
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+
+            transition:
+                background-color 0.3s,
+                color 0.3s;
+        }
+
+
+        /* =====================================
            CABEÇALHO
-           ========================= */
+           ===================================== */
 
         header {
-            background-color: #183C63;
-            color: #FFFFFF;
+            background-color: var(--cor-primaria);
+            color: var(--cor-fundo);
+
             text-align: center;
+
             padding: 40px 20px;
+
             border: 4px solid #fffb00;
+
             box-sizing: border-box;
+
+            border-radius: 8px;
         }
 
         header h1 {
@@ -46,23 +97,40 @@
             font-size: 18px;
         }
 
+
+        /* =====================================
+           TEXTO DO CABEÇALHO NO MODO ESCURO
+           ===================================== */
+
+        .tema-escuro header p {
+            color: var(--cor-contraste);
+        }
+
+
+        /* =====================================
+           IMAGEM DO BANNER
+           ===================================== */
+
         .banner-img {
             width: 100%;
             max-width: 700px;
             height: 250px;
+
             object-fit: contain;
+
             background-color: #ffffff;
+
             border-radius: 5px;
         }
 
 
-        /* =========================
+        /* =====================================
            ÁREA PRINCIPAL
-           ========================= */
+           ===================================== */
 
         main {
-            background-color: #ffffff;
-            color: #183C63;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
 
             display: flex;
             flex-wrap: wrap;
@@ -76,37 +144,46 @@
         }
 
 
-        /* =========================
+        /* =====================================
            CARDS DOS POSTS
-           ========================= */
+           ===================================== */
 
         article {
             display: flex;
+
             flex-direction: column;
 
             align-items: center;
+
             justify-content: center;
 
             text-align: center;
 
-            border: 1px solid #183C63;
+            border: 1px solid var(--cor-borda);
 
             margin: 0;
+
             gap: 16px;
+
             padding: 16px;
 
             flex: 1 1 25%;
 
             box-sizing: border-box;
 
-            background-color: #f9f9f9;
+            background-color: var(--cor-fundo);
+
             border-radius: 8px;
+
+            transition:
+                background-color 0.3s,
+                border-color 0.3s;
         }
 
 
-        /* =========================
+        /* =====================================
            IMAGENS DOS POSTS
-           ========================= */
+           ===================================== */
 
         .post-img {
             width: 120px;
@@ -116,43 +193,57 @@
 
             background-color: #ffffff;
 
-            border: 1px solid #ddd;
+            border: 1px solid var(--cor-borda-clara);
+
             border-radius: 8px;
 
             padding: 5px;
         }
 
 
-        /* =========================
-           TÍTULOS E AUTOR
-           ========================= */
+        /* =====================================
+           TÍTULOS
+           ===================================== */
 
         .post-title-area {
             width: 100%;
         }
 
         h2 {
-            color: #183C63;
+            color: var(--cor-primaria);
+
             font-size: 25px;
+
             margin: 0;
         }
 
+
+        /* =====================================
+           AUTOR
+           ===================================== */
+
         .artigo-autor {
-            color: #555555;
+            color: var(--cor-texto);
+
             font-size: 16px;
+
             font-weight: bold;
+
             margin: 8px 0 0 0;
         }
 
 
-        /* =========================
-           TEXTO DO POST
-           ========================= */
+        /* =====================================
+           CONTEÚDO
+           ===================================== */
 
         .content {
-            color: #333333;
+            color: var(--cor-texto);
+
             font-size: 17px;
+
             line-height: 1.6;
+
             width: 100%;
         }
 
@@ -161,79 +252,111 @@
         }
 
 
-        /* =========================
+        /* =====================================
+           PARÁGRAFOS NO MODO ESCURO
+           ===================================== */
+
+        .tema-escuro p {
+            color: var(--cor-texto);
+        }
+
+
+        /* =====================================
            FONTES
-           ========================= */
+           ===================================== */
 
         .artigo-fonte {
-            color: #666666;
+            color: var(--cor-texto);
+
             font-size: 13px;
+
             font-style: italic;
+
             margin-top: 15px;
         }
 
         .artigo-fonte a {
-            color: #183C63;
+            color: var(--cor-secundaria);
+
             font-weight: bold;
+
             text-decoration: none;
         }
 
         .artigo-fonte a:hover {
             text-decoration: underline;
-            color: #673ab7;
         }
 
 
-        /* =========================
+        /* =====================================
+           LINKS NO MODO ESCURO
+           ===================================== */
+
+        .tema-escuro a {
+            color: var(--cor-secundaria);
+        }
+
+
+        /* =====================================
            BOTÕES
-           ========================= */
+           ===================================== */
 
         .interactions {
             display: flex;
+
             justify-content: center;
+
             flex-wrap: wrap;
 
             gap: 10px;
 
             width: 100%;
 
-            border-top: 1px solid #dddddd;
+            border-top: 1px solid var(--cor-borda-clara);
+
             padding-top: 15px;
         }
 
         .btn-interact {
-            background-color: #f9f9f9;
+            background-color: var(--cor-botao);
 
-            color: #333333;
+            color: var(--cor-texto);
 
-            border: 1px solid #cccccc;
+            border: 1px solid var(--cor-borda-clara);
 
             padding: 10px 15px;
 
             font-size: 15px;
-            font-family: inherit;
+
+            font-family: var(--fonte-texto);
 
             cursor: pointer;
 
             border-radius: 5px;
 
-            transition: 0.2s;
+            transition:
+                background-color 0.2s,
+                color 0.2s;
         }
 
         .btn-interact:hover {
-            background-color: #eeeeee;
+            background-color: var(--cor-secundaria);
+
+            color: #ffffff;
         }
 
         .btn-interact.active {
             background-color: #673ab7;
+
             color: #ffffff;
+
             border-color: #673ab7;
         }
 
 
-        /* =========================
+        /* =====================================
            RESPONSIVIDADE
-           ========================= */
+           ===================================== */
 
         @media (max-width: 700px) {
 
@@ -282,12 +405,16 @@
 </head>
 
 
-<body>
+<!-- =====================================
+     BLOG NO MODO ESCURO
+     ===================================== -->
+
+<body class="tema-escuro">
 
 
-    <!-- =========================
-         CABEÇALHO DO BLOG
-         ========================= -->
+    <!-- =====================================
+         CABEÇALHO
+         ===================================== -->
 
     <header>
 
@@ -307,14 +434,16 @@
     </header>
 
 
-    <!-- =========================
+    <!-- =====================================
          POSTS
-         ========================= -->
+         ===================================== -->
 
     <main>
 
 
-        <!-- POST 1 -->
+        <!-- =================================
+             POST 1
+             ================================= -->
 
         <article>
 
@@ -350,7 +479,9 @@
                 </p>
 
                 <p class="artigo-fonte">
+
                     Fonte:
+
                     <a
                         href="https://www.pokemon.com/"
                         target="_blank"
@@ -358,6 +489,7 @@
                     >
                         Pokémon.com
                     </a>
+
                 </p>
 
             </div>
@@ -378,7 +510,9 @@
         </article>
 
 
-        <!-- POST 2 -->
+        <!-- =================================
+             POST 2
+             ================================= -->
 
         <article>
 
@@ -415,7 +549,9 @@
                 </p>
 
                 <p class="artigo-fonte">
+
                     Fonte:
+
                     <a
                         href="https://www.pokemon.com/us/pokedex/pikachu"
                         target="_blank"
@@ -423,6 +559,7 @@
                     >
                         Pokédex - Pikachu
                     </a>
+
                 </p>
 
             </div>
@@ -443,7 +580,9 @@
         </article>
 
 
-        <!-- POST 3 -->
+        <!-- =================================
+             POST 3
+             ================================= -->
 
         <article>
 
@@ -479,7 +618,9 @@
                 </p>
 
                 <p class="artigo-fonte">
+
                     Fonte:
+
                     <a
                         href="https://www.pokemon.com/us/pokedex/charizard"
                         target="_blank"
@@ -487,6 +628,7 @@
                     >
                         Pokédex - Charizard
                     </a>
+
                 </p>
 
             </div>
@@ -507,7 +649,9 @@
         </article>
 
 
-        <!-- POST 4 -->
+        <!-- =================================
+             POST 4
+             ================================= -->
 
         <article>
 
@@ -543,7 +687,9 @@
                 </p>
 
                 <p class="artigo-fonte">
+
                     Fonte:
+
                     <a
                         href="https://www.pokemon.com/us/pokedex/mewtwo"
                         target="_blank"
@@ -551,6 +697,7 @@
                     >
                         Pokédex - Mewtwo
                     </a>
+
                 </p>
 
             </div>
@@ -571,7 +718,9 @@
         </article>
 
 
-        <!-- POST 5 -->
+        <!-- =================================
+             POST 5
+             ================================= -->
 
         <article>
 
@@ -607,7 +756,9 @@
                 </p>
 
                 <p class="artigo-fonte">
+
                     Fonte:
+
                     <a
                         href="https://www.pokemon.com/"
                         target="_blank"
@@ -615,6 +766,7 @@
                     >
                         Pokémon.com
                     </a>
+
                 </p>
 
             </div>
@@ -638,9 +790,9 @@
     </main>
 
 
-    <!-- =========================
+    <!-- =====================================
          JAVASCRIPT
-         ========================= -->
+         ===================================== -->
 
     <script>
 
@@ -657,6 +809,7 @@
                 if (clicado === false) {
 
                     contador.textContent++;
+
                     botao.classList.add("active");
 
                     clicado = true;
@@ -664,6 +817,7 @@
                 } else {
 
                     contador.textContent--;
+
                     botao.classList.remove("active");
 
                     clicado = false;
