@@ -9,6 +9,10 @@
 
     <style>
 
+        /* =========================
+           CONFIGURAÇÕES GERAIS
+           ========================= */
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -17,6 +21,11 @@
             box-sizing: border-box;
             background-color: #f4f4f4;
         }
+
+
+        /* =========================
+           CABEÇALHO
+           ========================= */
 
         header {
             background-color: #183C63;
@@ -46,6 +55,11 @@
             border-radius: 5px;
         }
 
+
+        /* =========================
+           ÁREA PRINCIPAL
+           ========================= */
+
         main {
             background-color: #ffffff;
             color: #183C63;
@@ -61,10 +75,15 @@
             gap: 16px;
         }
 
+
+        /* =========================
+           CARDS DOS POSTS
+           ========================= */
+
         article {
             display: flex;
-
             flex-direction: column;
+
             align-items: center;
             justify-content: center;
 
@@ -84,6 +103,11 @@
             border-radius: 8px;
         }
 
+
+        /* =========================
+           IMAGENS DOS POSTS
+           ========================= */
+
         .post-img {
             width: 120px;
             height: 120px;
@@ -97,6 +121,11 @@
 
             padding: 5px;
         }
+
+
+        /* =========================
+           TÍTULOS E AUTOR
+           ========================= */
 
         .post-title-area {
             width: 100%;
@@ -115,6 +144,11 @@
             margin: 8px 0 0 0;
         }
 
+
+        /* =========================
+           TEXTO DO POST
+           ========================= */
+
         .content {
             color: #333333;
             font-size: 17px;
@@ -126,12 +160,33 @@
             margin-top: 0;
         }
 
+
+        /* =========================
+           FONTES
+           ========================= */
+
         .artigo-fonte {
             color: #666666;
             font-size: 13px;
             font-style: italic;
             margin-top: 15px;
         }
+
+        .artigo-fonte a {
+            color: #183C63;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .artigo-fonte a:hover {
+            text-decoration: underline;
+            color: #673ab7;
+        }
+
+
+        /* =========================
+           BOTÕES
+           ========================= */
 
         .interactions {
             display: flex;
@@ -174,6 +229,11 @@
             color: #ffffff;
             border-color: #673ab7;
         }
+
+
+        /* =========================
+           RESPONSIVIDADE
+           ========================= */
 
         @media (max-width: 700px) {
 
@@ -225,6 +285,10 @@
 <body>
 
 
+    <!-- =========================
+         CABEÇALHO DO BLOG
+         ========================= -->
+
     <header>
 
         <h1>Meu Blog Pokémon ⚡</h1>
@@ -242,7 +306,15 @@
 
     </header>
 
+
+    <!-- =========================
+         POSTS
+         ========================= -->
+
     <main>
+
+
+        <!-- POST 1 -->
 
         <article>
 
@@ -278,7 +350,14 @@
                 </p>
 
                 <p class="artigo-fonte">
-                    Fonte: Pokémon Database
+                    Fonte:
+                    <a
+                        href="https://www.pokemon.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Pokémon.com
+                    </a>
                 </p>
 
             </div>
@@ -287,7 +366,7 @@
             <div class="interactions">
 
                 <button class="btn-interact">
-                    💜 Gostei (<span>0</span>)
+                    ❤️ Gostei (<span>0</span>)
                 </button>
 
                 <button class="btn-interact">
@@ -297,6 +376,9 @@
             </div>
 
         </article>
+
+
+        <!-- POST 2 -->
 
         <article>
 
@@ -333,7 +415,14 @@
                 </p>
 
                 <p class="artigo-fonte">
-                    Fonte: Pokédex oficial
+                    Fonte:
+                    <a
+                        href="https://www.pokemon.com/us/pokedex/pikachu"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Pokédex - Pikachu
+                    </a>
                 </p>
 
             </div>
@@ -342,7 +431,7 @@
             <div class="interactions">
 
                 <button class="btn-interact">
-                    💜 Gostei (<span>0</span>)
+                    ❤️ Gostei (<span>0</span>)
                 </button>
 
                 <button class="btn-interact">
@@ -352,6 +441,9 @@
             </div>
 
         </article>
+
+
+        <!-- POST 3 -->
 
         <article>
 
@@ -366,7 +458,7 @@
                 <h2>Charizard e seus tipos</h2>
 
                 <p class="artigo-autor">
-                    Por: Vitor Daniel
+                    Por: Felipe
                 </p>
 
             </div>
@@ -387,7 +479,14 @@
                 </p>
 
                 <p class="artigo-fonte">
-                    Fonte: Pokédex oficial
+                    Fonte:
+                    <a
+                        href="https://www.pokemon.com/us/pokedex/charizard"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Pokédex - Charizard
+                    </a>
                 </p>
 
             </div>
@@ -396,7 +495,7 @@
             <div class="interactions">
 
                 <button class="btn-interact">
-                    💜 Gostei (<span>0</span>)
+                    ❤️ Gostei (<span>0</span>)
                 </button>
 
                 <button class="btn-interact">
@@ -407,6 +506,8 @@
 
         </article>
 
+
+        <!-- POST 4 -->
 
         <article>
 
@@ -421,7 +522,7 @@
                 <h2>Mewtwo: um Pokémon criado em laboratório</h2>
 
                 <p class="artigo-autor">
-                    Por: Vitor Daniel
+                    Por: Gabriel
                 </p>
 
             </div>
@@ -442,7 +543,14 @@
                 </p>
 
                 <p class="artigo-fonte">
-                    Fonte: Pokédex oficial
+                    Fonte:
+                    <a
+                        href="https://www.pokemon.com/us/pokedex/mewtwo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Pokédex - Mewtwo
+                    </a>
                 </p>
 
             </div>
@@ -451,7 +559,7 @@
             <div class="interactions">
 
                 <button class="btn-interact">
-                    💜 Gostei (<span>0</span>)
+                    ❤️ Gostei (<span>0</span>)
                 </button>
 
                 <button class="btn-interact">
@@ -461,6 +569,9 @@
             </div>
 
         </article>
+
+
+        <!-- POST 5 -->
 
         <article>
 
@@ -475,7 +586,7 @@
                 <h2>Por que o Pikachu é tão importante?</h2>
 
                 <p class="artigo-autor">
-                    Por: Vitor Daniel
+                    Por: Ana
                 </p>
 
             </div>
@@ -496,7 +607,14 @@
                 </p>
 
                 <p class="artigo-fonte">
-                    Fonte: Pokémon.com
+                    Fonte:
+                    <a
+                        href="https://www.pokemon.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Pokémon.com
+                    </a>
                 </p>
 
             </div>
@@ -505,7 +623,7 @@
             <div class="interactions">
 
                 <button class="btn-interact">
-                    💜 Gostei (<span>0</span>)
+                    ❤️ Gostei (<span>0</span>)
                 </button>
 
                 <button class="btn-interact">
@@ -519,6 +637,10 @@
 
     </main>
 
+
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
 
     <script>
 
